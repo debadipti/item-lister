@@ -1,7 +1,11 @@
-// initial variables
+// DOM variables
 const form = document.getElementById("form");
 const itemList = document.getElementById("items");
 const newItem = document.getElementById("input-value");
+
+// input field focus on load and autocomplete off
+newItem.focus();
+newItem.autocomplete = "off";
 
 // form submit event
 form.addEventListener("submit", addItem);
@@ -37,7 +41,7 @@ function addItem(e) {
     form.reset();
   } else {
     // alert the user to input something
-    alert("Please Input Something First :)");
+    alert("Please add something to the list.");
   }
   if (itemList.innerHTML !== "") {
     document.getElementById("title").innerHTML = "List Items";
@@ -58,32 +62,3 @@ function deleteItem(e) {
     document.getElementById("lead").style.display = "block";
   }
 }
-
-// change the background-color of the submit btn according to what is being typed
-
-// // get the input & btn
-// const inputValue = document.getElementById("input-value");
-// const sumBtn = document.querySelector('input[type="submit"]');
-
-// // add event listner
-// inputValue.addEventListener("input", changeColor);
-
-// function changeColor(e) {
-//   //   if (e.target.value === "blue") {
-//   //     sumBtn.style.backgroundColor = "blue";
-//   //   }
-
-//   // the variable for the color value
-//   const colorValue = e.target.value;
-
-//   // change the background color of the btn
-//   if (colorValue !== "white") {
-//     sumBtn.style.backgroundColor = colorValue;
-//   } else {
-//     sumBtn.style.backgroundColor = colorValue;
-//     sumBtn.style.color = "black";
-//   }
-//   if (colorValue === "") {
-//     sumBtn.style.color = "white";
-//   }
-// }
